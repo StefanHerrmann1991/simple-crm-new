@@ -7,4 +7,4 @@ export interface Contact {
     position: string;
     notes?: string;
     createdDate: Date;
-}
+  }

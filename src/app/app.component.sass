@@ -1,0 +1,59 @@
+@import '../styles.sass'
+
+.example-container
+    height: 100vh
+
+.menu-icon
+    cursor: pointer
+
+.sidenav
+    width: 300px
+
+.logo-container
+    padding-left: 16px
+    padding-right: 16px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04)
+    align-items: center
+    min-height: 55px
+    max-width: 100%
+    display: flex
+    justify-content: center
+
+.credits
+    position: absolute
+    bottom: 10px
+    left: 10px
+    color: $gray
+    font-size: 12px
+
+mat-toolbar, mat-toolbar-row, mat-toolbar-single-row, mat-toolbar-single-row
+    min-height: 56px !important
+    height: 56px !important
+
+.router-container
+    padding-right: 56px
+    padding-left: 56px
+    padding-top: 16px
+
+ul
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    li
+        padding-left: 16px
+        padding-right: 16px
+        height: 48px
+        display: flex
+        align-items: center
+        cursor: pointer
+        &:focus
+            outline: none
+        &:hover
+            background-color: rgba(0, 0, 0, 0.04)
+        mat-icon
+            margin-right: 16px
+
+@media (max-width: 599px)
+    mat-toolbar
+        min-height: 56px

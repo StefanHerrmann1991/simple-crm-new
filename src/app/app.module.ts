@@ -22,12 +22,24 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import { LeadManagementComponent } from './lead-management/lead-management.component';
+import { CampaignManagementComponent } from './campaign-management/campaign-management.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    CustomerListComponent,
+    CustomerDetailsComponent,
+    ContactListComponent,
+    ContactDetailsComponent,
+    LeadManagementComponent,
+    CampaignManagementComponent
   ],
   imports: [
     BrowserModule,
