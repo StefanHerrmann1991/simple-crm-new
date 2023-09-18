@@ -20,6 +20,7 @@ import {
   providedIn: 'root',
 })
 export class CrmService {
+
   customers: Customer[] = [];
   contacts: Contact[] = [];
 
@@ -67,6 +68,18 @@ export class CrmService {
       });
     }));
   }
+
+
+
+  async addCustomer(item: {}, ref: string) {
+    await addDoc(this.getRef(ref), item)
+  }
+
+  getRef(ref) {
+    return collection(this.firestore, ref);
+  }
+
+
 
   subContactsList() {
     const q = query(

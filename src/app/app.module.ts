@@ -25,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { LeadManagementComponent } from './lead-management/lead-management.component';
 import { CampaignManagementComponent } from './campaign-management/campaign-management.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
@@ -76,6 +76,7 @@ import { ContactComponent } from './contact/contact.component';
     MatSortModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

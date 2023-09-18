@@ -1,1 +1,32 @@
-<p>create-customer works!</p>
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+        </mat-form-field>
+    </div>
+
+    <!-- Similar blocks for lastName, email, phoneNumber, etc. -->
+
+    <div formGroupName="address">
+        <mat-form-field appearance="fill">
+            <mat-label>Street</mat-label>
+            <input matInput formControlName="street">
+        </mat-form-field>
+
+        <!-- Similar blocks for city, state, postalCode, and country -->
+    </div>
+
+    <div formGroupName="socialMediaProfiles">
+        <mat-form-field appearance="fill">
+            <mat-label>LinkedIn</mat-label>
+            <input matInput formControlName="linkedIn">
+        </mat-form-field>
+
+        <!-- Similar blocks for twitter and facebook -->
+    </div>
+
+    <div>
+        <button mat-raised-button type="submit">Create Customer</button>
+    </div>
+</form>
