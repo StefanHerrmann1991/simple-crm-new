@@ -1,0 +1,59 @@
+<div class="customer-list-container">
+  <h1>Kundenliste</h1>
+
+  <div class="search-sort-section">
+    <input type="text" id="customer-search" placeholder="Kunden suchen..." />
+    <select id="sort-options">
+      <option value="name">Nach Name</option>
+      <option value="date">Nach Datum</option>
+      <!-- Weitere Sortieroptionen können hier hinzugefügt werden -->
+    </select>
+  </div>
+
+  <div class="demo-button-container">
+    <button mat-raised-button (click)="openCreateCustomerDialog()" class="demo-button">
+      Add data
+    </button>
+    <button
+      mat-raised-button
+      [disabled]="!dataSource.length"
+      (click)="removeCustomer()"
+      class="demo-button"
+    >
+      Remove data
+    </button>
+  </div>
+
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8 demo-table"
+  >
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef>Weight</th>
+      <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef>Symbol</th>
+      <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
