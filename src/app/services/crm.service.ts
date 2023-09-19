@@ -39,7 +39,7 @@ export class CrmService {
     this.unsubContacts();
   }
 
-  getCustomers() {}
+  getCustomers() { }
 
   subCustomersList() {
     const q = query(
@@ -55,13 +55,13 @@ export class CrmService {
     }));
   }
 
-  subList(array: any, col: string, sort: string) {
+  subList(array: any, unsubArray: any, col: string, sort: string) {
     const q = query(
       collection(this.firestore, col),
       orderBy(sort),
       limit(100)
     );
-    return (this.unsubContacts = onSnapshot(q, (list: any) => {
+    return (unsubArray = onSnapshot(q, (list: any) => {
       array = [];
       list.forEach((element: any) => {
         array.push(this.setContactObj(element.data(), element.id));
@@ -140,7 +140,7 @@ export class CrmService {
         .catch((err) => {
           console.log(err);
         })
-        .then(() => {});
+        .then(() => { });
     }
   }
 

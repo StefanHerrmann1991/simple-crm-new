@@ -12,6 +12,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class CreateCustomerComponent implements OnInit {
 
   customerForm: FormGroup;
+  showAdditionalInfo = false;
+
+
 
   constructor(
     private fb: FormBuilder,
@@ -47,6 +50,10 @@ export class CreateCustomerComponent implements OnInit {
     });
   }
 
+  toggleAdditionalInfo() {
+    this.showAdditionalInfo = !this.showAdditionalInfo;
+  }
+  
   ngOnInit(): void {
   }
 
@@ -55,6 +62,8 @@ export class CreateCustomerComponent implements OnInit {
       this.addCustomer()
     }
   }
+
+
 
 
   addCustomer() {

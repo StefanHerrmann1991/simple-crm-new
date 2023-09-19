@@ -12,13 +12,14 @@ import { Customer } from 'src/app/interfaces/customer';
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css'],
+  styleUrls: ['./customer-list.component.sass'],
 })
 
 
 export class CustomerListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'action'];
+
   dataSource: any[] = [];
+  displayedColumns: any;
 
   constructor(
     private CrmService: CrmService,
@@ -31,16 +32,15 @@ export class CustomerListComponent implements OnInit {
   }
 
   getCustomerList() {
-    /*    this.CrmService.getCustomers().subscribe((data: any[]) => {
-         this.dataSource = data;
-       }); */
+   
   }
 
   removeCustomer() { }
 
   openCreateCustomerDialog(): void {
     const dialogRef = this.dialog.open(CreateCustomerComponent, {
-      width: '400px',
+      width: '600px',
+      height: '600px'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
